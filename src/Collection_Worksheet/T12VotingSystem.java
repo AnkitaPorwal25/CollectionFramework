@@ -1,9 +1,6 @@
 package Collection_Worksheet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class T12VotingSystem {
 
@@ -35,12 +32,16 @@ public class T12VotingSystem {
         // Create a list of Map entries and sort it by vote count in descending order
         List<Map.Entry<String, Integer>> sortedResults = new ArrayList<>(voteCounts.entrySet());
 
-        sortedResults.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())); // Sort descending by value
+// Sort using Comparator.comparing() and reversed() for descending order
+        sortedResults.sort(
+                Comparator.comparing(Map.Entry<String, Integer>::getValue).reversed()
+        );
 
         System.out.println("Election Results:");
         for (Map.Entry<String, Integer> entry : sortedResults) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " votes");
         }
+
     }
 }
 

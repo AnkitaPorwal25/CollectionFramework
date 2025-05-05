@@ -1,0 +1,90 @@
+\Java Collections Framework – Assignment (Advanced)
+
+📝 Instructions:
+- Use appropriate collection types based on the use case.
+- Focus on correct usage of generics, sorting, filtering, and efficient operations.
+- Implement clean code practices and modular structure.
+
+------------------------------------------------------------------------
+
+
+Problem 1: Advanced Student Management (List, Comparator, Map)
+
+Create a Student class with id, name, age, grade, and branch.
+Store at least 15 students in an ArrayList.
+Sort students by branch, then by descending grade.
+Group students by branch using a Map<String, List<Student>>.
+
+Problem 2: Unique Word Frequency Counter (Map, TreeSet)
+Given a paragraph, calculate and print:
+Number of unique words
+Frequency of each word
+Display words sorted alphabetically
+
+
+
+Problem 3: Department Directory with Sorted Employees (Map, List)
+Maintain a Map<String, List<Employee>> where the key is department name.
+Sort each department’s employees by salary descending.
+Provide a method to return top N paid employees across all departments.
+
+Problem 4: Task Prioritization Engine (PriorityQueue, Comparator)
+Create a Task class with name, priority, deadline.
+Use PriorityQueue  to order by closest deadline, then highest priority.
+Poll and print tasks as they should be executed.
+
+Problem 5: Product Catalog System (TreeMap,
+Comparator)
+Create a Product class with id, name, price, rating, and stock.
+Store products in a TreeMap<Integer, Product> keyed by id.
+Sort and print products by descending rating, and then by name.
+
+Problem 6: Library Catalog (Map<String, Set<Book>>)
+Each genre maps to a set of Book objects.
+Prevent duplicate books using equals and hashCode.
+Print all books in a genre, sorted by publication year.
+
+
+Problem 7: Movie Rating Aggregator (Map, List)
+Users rate movies between 1-5.
+Store movie name -> list of ratings.
+Compute and display average rating per movie sorted descending.
+
+Problem 8: Employee Hierarchy System (Map, TreeMap)
+Maintain a hierarchy with Map<Manager, TreeMap<Level, List<Employee>>>.
+Print employees reporting to a manager at each level.
+
+
+Problem 9: Leaderboard Tracker (TreeSet, Comparator)
+Track player scores using TreeSet<Player>  sorted by score descending.
+Update a player's score and maintain correct leaderboard order.
+
+Problem 10: Bank Transaction Log (Map, List)
+Track transactions using Map<String, List<Transaction>> keyed by account number.
+Generate statements, sort by transaction time.
+
+Problem 11: Company Asset Tracker (Map<String, Set<Asset>>)
+Store assets per department with unique Asset objects.
+Detect duplicate asset IDs globally.
+
+
+
+
+Problem 12: Voting System (Map<String, Integer>)
+Build a voting system that:
+Tallies votes per candidate
+Sorts by vote count descending
+
+Problem 13: Flight Booking Manager (Queue, Map)
+Use a Queue for booking requests and a Map for confirmed bookings.
+Process bookings FIFO and update map with seat numbers.
+
+Problem 14: Restaurant Order System (Deque, List)
+Use a Deque<Order> for managing current orders.
+Allow adding/removing orders from both ends.
+Store history in a List<Order>.
+
+
+Problem 15: College Subject Allotment (Map<String, List<String>>)
+Store which subjects are allotted to each student
+Provide reverse lookup: which students chose a specific subject

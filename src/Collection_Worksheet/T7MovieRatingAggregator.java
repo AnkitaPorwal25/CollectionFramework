@@ -34,7 +34,7 @@ public class T7MovieRatingAggregator {
 
             double avg = ratings.isEmpty() ? 0.0 : (double) sum / ratings.size();
 
-            averageRatings.add(new AbstractMap.SimpleEntry<>(movie, avg));
+            averageRatings.add(Map.entry(movie, avg));
         }
 
 
