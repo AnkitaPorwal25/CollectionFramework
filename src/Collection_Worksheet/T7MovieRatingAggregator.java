@@ -1,5 +1,6 @@
 package Collection_Worksheet;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class T7MovieRatingAggregator {
     public static void main(String[] args) {
@@ -20,22 +21,33 @@ public class T7MovieRatingAggregator {
         addRating(movieRatings, "Titanic", 4);
         addRating(movieRatings, "Titanic", 5);
 
-        // Compute average ratings and store in a list
-        List<Map.Entry<String, Double>> averageRatings = new ArrayList<>();
+//        // Compute average ratings and store in a list
+//        List<Map.Entry<String, Double>> averageRatings = new ArrayList<>();
+//
+//        for (Map.Entry<String, List<Integer>> entry : movieRatings.entrySet()) {
+//            String movie = entry.getKey();
+//            List<Integer> ratings = entry.getValue();
+//
+//            int sum = 0;
+//            for (int rating : ratings) {
+//                sum += rating;
+//            }
+//
+//            double avg = ratings.isEmpty() ? 0.0 : (double) sum / ratings.size();
+//
+//            averageRatings.add(Map.entry(movie, avg));
+//        }
 
-        for (Map.Entry<String, List<Integer>> entry : movieRatings.entrySet()) {
-            String movie = entry.getKey();
-            List<Integer> ratings = entry.getValue();
 
-            int sum = 0;
-            for (int rating : ratings) {
-                sum += rating;
-            }
-
-            double avg = ratings.isEmpty() ? 0.0 : (double) sum / ratings.size();
-
-            averageRatings.add(Map.entry(movie, avg));
-        }
+        List<Map.Entry<String, Double>> averageRatings = movieRatings.entrySet().stream()
+                .map(entry -> {
+                    String movie = entry.getKey();
+                    List<Integer> ratings = entry.getValue();
+                    double avg = ratings.isEmpty() ? 0.0 :
+                            ratings.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+                    return Map.entry(movie, avg);
+                })
+                .collect(Collectors.toList());
 
 
         // Sort by descending average rating
